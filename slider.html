@@ -1,0 +1,77 @@
+<html>
+    <head><title>Slider</title>
+    
+        <style>
+        #slider{
+            width:1000px;
+            height:500px;
+            margin:20px auto;
+            margin-left:300px;
+            border:10px solid white;
+            box-shadow: 0px 0px 5px 2px black;
+        }
+       
+        img{
+            width:100%;
+            height:500px;
+        }
+        button{
+            padding:20px;
+            border:none;
+            background-color:white;
+           font-size:35px;
+           font-weight:bolder;
+            top:35%;
+            position:absolute;
+          
+        }
+        #prew{
+            border-radius:0 10px 10px 0px;
+        }
+        #next{
+            border-radius:10px 0 0 10px;
+            margin-left:953px;
+        }
+        </style>
+    <script>
+        slider=document.getElementById("box");
+        var img=["1.jpg","2.jfif","3.jpg","4.jfif","5.jpg"];
+    var i=img.length;
+    function nextImage(){
+  
+        if(i<img.length){
+            i=i+1;
+        }
+        else{
+            i=1;
+        }
+       document.getElementById("img").src=img[i-1];
+    
+    }
+
+
+    function prewImage(){
+        if(i<img.length+1 && i>1 ){
+            i=i-1;
+        }
+        else{
+            i=img.length;
+        }
+        document.getElementById("img").src=img[i-1];
+    
+    }  
+    
+    </script>
+    </head>
+<body>
+    <div id="slider">
+        <div class="box"id="box">
+            <img src="1.jpg" id="img"alt="car1">
+
+        </div>
+        <button id="prew" onclick="prewImage()">-</button>
+        <button id="next" onclick="nextImage()">+</button>
+    </div>
+</body>
+
+</html>
